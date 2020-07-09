@@ -1,12 +1,22 @@
 import React from 'react';
-import Link from 'next/link'
-import Head from 'next/head';
-import AppLayout from '../components/AppLayout';
+import { Form, Input, Button } from 'antd';
 
-const Home = () => {
+const dummy = {
+  isLogin: true,
+}
+
+const Home = ({ isLogin }) => {
   return (
     <>
-      <div>hello next</div>
+      <div>
+        {dummy.isLogin &&
+          <Form encType="multipart/form-data">
+            <Input.TextArea maxLength={140} placeholder="여기다가 뭘 적을까요?" />
+            <Button>이미지 업로드</Button>
+            <Button type="primary" htmlType="submit" style={{ float: 'right' }}>ㅇㅇ</Button>
+          </Form>
+        }
+      </div>
     </>
   )
 }
