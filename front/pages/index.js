@@ -1,21 +1,30 @@
 import React from 'react';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, Card, Avatar } from 'antd';
+import PostForm from '../components/PostForm';
+import PostCard from '../components/PostCard';
 
 const dummy = {
   isLogin: true,
+  imagePaths: [],
+  mainPosts: [{
+    user: {
+      id: 1,
+      nickname: 'ykwimk',
+    },
+    content: 'asdfdasf'
+  }],
 }
 
-const Home = ({ isLogin }) => {
+const Home = () => {
   return (
     <>
       <div>
-        {dummy.isLogin &&
-          <Form encType="multipart/form-data">
-            <Input.TextArea maxLength={140} placeholder="여기다가 뭘 적을까요?" />
-            <Button>이미지 업로드</Button>
-            <Button type="primary" htmlType="submit" style={{ float: 'right' }}>ㅇㅇ</Button>
-          </Form>
-        }
+        {dummy.isLogin && <PostForm dummy={dummy} />}
+        {dummy.mainPosts.map((c) => {
+          return (
+            <PostCard key={c} item={c} />
+          )
+        })}
       </div>
     </>
   )

@@ -1,1 +1,5 @@
-### React js로 만드는 Node-Bird
+### React-NodeBird
+* React.js
+* Next.js
+* Redux
+* Ant-Design

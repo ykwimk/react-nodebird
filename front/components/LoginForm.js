@@ -12,7 +12,7 @@ const LoginForm = () => {
   }, [userId, userPassword])
 
   return (
-    <Form>
+    <Form style={{ padding: '10px' }}>
       <div>
         <label htmlFor="userId">아이디</label>
         <br />
@@ -23,7 +23,7 @@ const LoginForm = () => {
         <br />
         <Input name="userPassword" value={userPassword} onChange={onChangePassword} required />
       </div>
-      <div>
+      <div style={{ marginTop: '10px' }}>
         <Button type="primary" htmlType="submit" loading={false} onClick={onSubmit}>
           로그인
         </Button>
