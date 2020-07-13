@@ -1,5 +1,5 @@
 //store (초기값)
-const initialState = {
+export const initialState = {
   isLogin: false,
   user: {},
 }
@@ -30,7 +30,6 @@ const reducer = (state = initialState, action) => {
         user: action.data
       }
     }
-
     case LOG_OUT: {
       return {
         ...state,
@@ -38,6 +37,12 @@ const reducer = (state = initialState, action) => {
         user: {}
       }
     }
+    default: {
+      return {
+        ...state
+      }
+    }
   }
 }
 
+export default reducer;

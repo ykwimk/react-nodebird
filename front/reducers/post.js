@@ -1,4 +1,4 @@
-const initialState = {
+export const initialState = {
   mainPosts: []
 }
 
@@ -23,7 +23,7 @@ const reducer = (state = initialState, action) => {
   switch(action.type) {
     case ADD_POST: {
       return {
-
+        ...state
       }
     }
 
@@ -33,5 +33,12 @@ const reducer = (state = initialState, action) => {
         mainPosts: [ action.data, ...state.mainPosts ]
       }
     }
+    default: {
+      return {
+        ...state
+      }
+    }
   }
 }
+
+export default reducer;
