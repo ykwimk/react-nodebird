@@ -5,18 +5,18 @@ export const initialState = {
 }
 
 //action의 이름
-const LOG_IN = 'LOG_IN'
-const LOG_OUT = 'LOG_OUT'
+export const LOG_IN = 'LOG_IN'
+export const LOG_OUT = 'LOG_OUT'
 
 //실제 action
-const loginAction = {
+export const loginAction = {
   type: LOG_IN,
   data: {
     nickname: 'ykwimk',
   }
 }
 
-const logoutAction = {
+export const logoutAction = {
   type: LOG_OUT,
 }
 

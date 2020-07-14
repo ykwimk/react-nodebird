@@ -30,7 +30,7 @@ export default withRedux((initialState, options) => {
   const middleWares = []
   const enhancer = compose(
     applyMiddleware(...middleWares),
-    !options.isServer !== 'undefined' &&
+    typeof window !== 'undefined' &&
       window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined'
         ? window.__REDUX_DEVTOOLS_EXTENSION__()
         : (f) => f,
