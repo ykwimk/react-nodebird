@@ -4,16 +4,11 @@ import Link from 'next/link';
 import { Menu, Input, Row, Col } from 'antd';
 import LoginForm from './LoginForm';
 import LoginCard from './LoginCard';
-
-const dummy = {
-  nickname: 'ykwimk',
-  post: [],
-  followings: [],
-  followers: [],
-  isLogin: false,
-}
+import { useSelector } from 'react-redux';
 
 const AppLayout = ({ children }) => {
+  const { isLogin } = useSelector(state => state.user)
+
   return (
     <div>
       <Menu mode="horizontal">
@@ -29,9 +24,9 @@ const AppLayout = ({ children }) => {
       </Menu>
       <Row gutter={10}>
         <Col xs={24} md={6}>
-          {dummy.isLogin
-            ? <LoginCard dummy={dummy} />
-            : <LoginForm dummy={dummy} />
+          {isLogin
+            ? <LoginCard />
+            : <LoginForm />
           }
         </Col>
         <Col xs={24} md={12}>{children}</Col>

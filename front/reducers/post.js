@@ -1,5 +1,12 @@
 export const initialState = {
-  mainPosts: []
+  mainPosts: [{
+    user: {
+      id: 1,
+      nickname: 'ykwimk',
+    },
+    content: 'asdfdasf',
+  }],
+  imagePaths: [],
 }
 
 const ADD_POST = 'ADD_POST'

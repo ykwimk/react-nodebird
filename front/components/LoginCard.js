@@ -1,19 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Card, Avatar } from 'antd';
+import { useSelector } from 'react-redux';
 
-const LoginCard = ({ dummy }) => {
+const LoginCard = () => {
+  const { user } = useSelector(state => state.user)
   return (
     <Card
       actions={[
-        <div key="twit">ㅇㅇ<br />{dummy.post.length}</div>,
-        <div key="following">팔로잉<br />{dummy.followings.length}</div>,
-        <div key="follower">팔로워<br />{dummy.followers.length}</div>
+        <div key="twit">ㅇㅇ<br />{user.post && user.post.length}</div>,
+        <div key="following">팔로잉<br />{user.followings && user.followings.length}</div>,
+        <div key="follower">팔로워<br />{user.followers && user.followers.length}</div>
       ]}
     >
       <Card.Meta
-        avatar={<Avatar>{dummy.nickname[0]}</Avatar>}
-        title={dummy.nickname}
+        avatar={<Avatar>{user.nickname[0]}</Avatar>}
+        title={user.nickname}
       />
     </Card>
   )

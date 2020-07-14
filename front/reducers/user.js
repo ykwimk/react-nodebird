@@ -1,7 +1,12 @@
 //store (초기값)
 export const initialState = {
   isLogin: false,
-  user: {},
+  user: {
+    nickname: '',
+    post: [],
+    followings: [],
+    followers: [],
+  },
 }
 
 //action의 이름

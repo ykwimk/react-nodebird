@@ -1,7 +1,9 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
+import { useSelector } from 'react-redux';
 
-const PostForm = ({ dummy }) => {
+const PostForm = () => {
+  const { imagePaths } = useSelector(state => state.post)
   return (
     <Form encType="multipart/form-data" style={{ margin: '10px 0 20px' }}>
       <div>
@@ -10,7 +12,7 @@ const PostForm = ({ dummy }) => {
         <Button type="primary" htmlType="submit" style={{ float: 'right' }}>ㅇㅇ</Button>
       </div>
       <div>
-        {dummy.imagePaths.map((v, i) => {
+        {imagePaths && imagePaths.map((v, i) => {
           return (
             <div key={v} style={{ display: 'inline-block' }}>
               <img src={`http://localhost:3000/${v}`} style={{ width: '200px' }} alt={v} />
