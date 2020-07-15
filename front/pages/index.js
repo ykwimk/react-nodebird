@@ -4,7 +4,7 @@ import PostCard from '../components/PostCard';
 import { useSelector } from 'react-redux';
 
 const Home = () => {
-  const { isLogin, user } = useSelector(state => state.user)
+  const { isLogin } = useSelector(state => state.user)
   const { mainPosts } = useSelector(state => state.post)
 
   return (

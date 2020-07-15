@@ -1,12 +1,14 @@
+const dummyUser = {
+  nickname: 'ykwimk',
+  post: [],
+  followings: [],
+  followers: [],
+}
+
 //store (초기값)
 export const initialState = {
   isLogin: false,
-  user: {
-    nickname: '',
-    post: [],
-    followings: [],
-    followers: [],
-  },
+  user: {},
 }
 
 //action의 이름
@@ -16,9 +18,6 @@ export const LOG_OUT = 'LOG_OUT'
 //실제 action
 export const loginAction = {
   type: LOG_IN,
-  data: {
-    nickname: 'ykwimk',
-  }
 }
 
 export const logoutAction = {
@@ -32,7 +31,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLogin: true,
-        user: action.data
+        user: dummyUser,
       }
     }
     case LOG_OUT: {

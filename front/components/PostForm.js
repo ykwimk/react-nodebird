@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 const PostForm = () => {
   const { imagePaths } = useSelector(state => state.post)
+
   return (
     <Form encType="multipart/form-data" style={{ margin: '10px 0 20px' }}>
       <div>
