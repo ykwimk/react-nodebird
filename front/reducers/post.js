@@ -37,7 +37,10 @@ const reducer = (state = initialState, action) => {
     case ADD_DUMMY: {
       return {
         ...state,
-        mainPosts: [ action.data, ...state.mainPosts ]
+        mainPosts: [
+          action.data,
+          ...state.mainPosts
+        ]
       }
     }
     default: {
